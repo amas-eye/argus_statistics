@@ -31,9 +31,10 @@ def get__mongo_cursor(dbname, collection_name):
         return col_cursor
 
 
-def urlopen(base_url: str, param: dict):
+def urlopen(base_url: str, param: dict=None):
     """A url handler for update process which use opentsdb api with http GET verb."""
-
+    if param is None:
+        param = {}
     try:
         query_param = parse.urlencode(param)
         url = base_url + query_param
