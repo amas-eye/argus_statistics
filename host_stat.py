@@ -168,7 +168,10 @@ def count_alert_point(classify):
                     exist_minor += 1
         total_point = critical_num * 3 + minor_num
         total_alert_point = exist_critical * 3 + exist_minor
-        inpoint = (total_alert_point / total_point) * 60
+        try:
+            inpoint = (total_alert_point / total_point) * 60
+        except ZeroDivisionError:
+            inpoint = 0
         return inpoint
     else:
         item_num = 0
