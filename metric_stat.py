@@ -36,7 +36,7 @@ def get_metrics_quantity(host: str = OPENTSDB_HOST,
 
     host, port = host, port
     radix_url = f'http://{host}:{port}/api/stats'  # the url used to find used ids
-    radix_raw = urlopen(radix_url, )
+    radix_raw = urlopen(radix_url)
     radix_meta = json.load(radix_raw)
     radix = 9  # a base num add to real used ids in opentsdb
 
