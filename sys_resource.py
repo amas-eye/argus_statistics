@@ -192,6 +192,8 @@ def sorting_data(a_data, metric_name):
     :param a_data: get_raw_data中拿到的结果类型
     :return: sorted_data (type:list)
     """
+    if not a_data:
+        return []
     normal = ("cluster.cpu.usage", "cluster.net.dev.receive", "cluster.net.dev.transmit")
     if metric_name in normal:
         sorted_data = sorted(a_data, key=lambda k: k['data'], reverse=True)
@@ -211,6 +213,8 @@ def add_percentage(s_data, metric_name):
     :param s_data: 已经排序好的列表
     :return:
     """
+    if not s_data:
+        return []
     max_data = s_data[0]['data']
     normal = ("cluster.cpu.usage", "cluster.net.dev.receive", "cluster.net.dev.transmit")
     for item in s_data:
