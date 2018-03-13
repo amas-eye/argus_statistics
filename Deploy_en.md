@@ -10,7 +10,7 @@ python runtime for the project is python3 needed (version>=3.6.0)
 3. start the program ,there are two way to start the program
    1. use the command 
     ···
-    nohup python start_dashboard.py --start &
+    nohup python app.py --start &
     ···
    2. start with supervisor
      the detail need to be find in the official website of supervisor 

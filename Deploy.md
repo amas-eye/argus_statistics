@@ -10,6 +10,6 @@
 3. 启动程序
    1. 方法一 （直接使用nohup进行启动）
     ```
-     nohup python start_dashboard.py --start &
+     nohup python app.py --start &
     ```
    2. 方法二 使用supervisor进行启动，详情根据supervisor官方文档进行配置

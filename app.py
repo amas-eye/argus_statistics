@@ -20,7 +20,7 @@ base_dir = os.path.dirname(os.path.abspath(__file__))
 config = os.path.join(base_dir, "etc", "update_config.json")
 pidfile = os.path.join(base_dir, 'pidfile')
 logging.basicConfig(
-    filename=os.path.join(base_dir, 'logs', "statistics.log"),
+    filename=os.path.join(base_dir, 'logs', "app.log"),
     level=logging.DEBUG,
     format='%(asctime)s %(levelname)s %(module)s:%(lineno)d: %(message)s'
 )
