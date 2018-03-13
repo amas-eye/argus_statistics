@@ -108,8 +108,8 @@ def main():
     while True:
         Thread_list = []
         for item in update_list:
-            T = threading.Thread(target=item, args=())
-            Thread_list.append(T)
+            t = threading.Thread(target=item, args=())
+            Thread_list.append(t)
         for thread in Thread_list:
             thread.start()
         logging.debug("all thread is running")
