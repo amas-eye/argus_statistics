@@ -44,8 +44,14 @@ def update_sys_resource():
     result['cpu_usage'] = cpu_usage
     result['mem_all'], result['mem_using'] = mem_usage
     result['disk_all'], result['disk_using'] = df_usage
-    result['mem_usage'] = result['mem_using'] / result['mem_all']
-    result['disk_usage'] = result['disk_using'] / result['disk_all']
+    try:
+        result['mem_usage'] = result['mem_using'] / result['mem_all']
+    except ZeroDivisionError:
+        result['mem_usage'] = 0.0
+    try:
+        result['disk_usage'] = result['disk_using'] / result['disk_all']
+    except ZeroDivisionError:
+        result['disk_usage'] = 0.0
     result['cpu_topN'] = get_topN_cpu()
     net_topn_data = get_topN_netIO()
     mnd_topn_data = get_topN_mnd()
