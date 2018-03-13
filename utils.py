@@ -40,7 +40,8 @@ def urlopen(base_url: str, param: dict=None):
         url = base_url + query_param
         response = request.urlopen(url, timeout=5)
     except Exception as e:
-        raise
+        logging.error(e, exc_info=True)
+        response = None
     return response
 
 

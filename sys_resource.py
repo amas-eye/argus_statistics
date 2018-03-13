@@ -165,7 +165,9 @@ def get_raw_data(url, Param):
     :return:
     """
     response = urlopen(url, Param)
-    if response.status == 200:
+    if response is None or response.status != 200:
+        return 0
+    else:
         response_data = json.load(response)
         available_data = []
         for item in response_data:
@@ -179,8 +181,6 @@ def get_raw_data(url, Param):
             single_data["data"] = data
             available_data.append(single_data)
         return available_data
-    else:
-        return 0
 
 
 def sorting_data(a_data, metric_name):
