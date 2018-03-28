@@ -6,15 +6,15 @@
 ## 使用方法
 ### 启动
 ```
-nohup python start_dashboard.py --start &
+nohup python app.py --start &
 ``` 
 ### 重启
 ```
-nohup python start_dashboard.py --restart \&
+nohup python app.py --restart \&
  ```
 ### 停止
 ```
-nohup python start_dashboard.py --stop & 
+nohup python app.py --stop & 
 ```
 
 
@@ -30,10 +30,10 @@ nohup python start_dashboard.py --stop &
 更新频率可以通过对配置文件中的update_config.json中"update_interval"进行修改
 默认更新频率为5分钟，默认单位为分钟，假如想以小时为更新单位，应该写为 n*60(n为小时数)
 
-- 入口文件为```start_dashboard.py```  
+- 入口文件为```app.py```  
 使用方法:  
 ```
-python start_dashboard.py [--start|--stop|--restart]
+python app.py [--start|--stop|--restart]
 ```
 分别进行启动，停止和重启这个更新dashboard数据的模块
 
